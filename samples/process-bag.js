@@ -4,7 +4,7 @@ const bag = new PersistentBag({
   port: '3306',
   user: 'root',
   password: '',
-  database: 'pyle'
+  database: 'test'
 });
 
 bag.process(function (bag, done) {

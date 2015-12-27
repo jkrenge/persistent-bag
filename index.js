@@ -6,7 +6,7 @@ const DB = require('./lib/database');
 var database;
 
 const Async = require('async');
-const moment = require('moment');
+const Schedule = require('node-schedule');
 
 /////////////////////
 // Bag interaction //
@@ -57,6 +57,7 @@ PersistentBag.prototype.process = function(worker) {
 
           } else {
 
+            logToConsole('Processed bag ' + baghash);
             setBagAsDone(baghash, function (err_setBagAsDone) {
               cb_esa();
             });
@@ -70,10 +71,9 @@ PersistentBag.prototype.process = function(worker) {
     }, function(err_esa) {
       if (err_esa) logToConsole('Error when iterating bags', err_esa);
 
-      var nextIteration = BagUtil.nextIteration();
-      setInterval(function () {
+      Schedule.scheduleJob(BagUtil.nextIterationDate(), function () {
         bag.process(worker);
-      }, nextIteration);
+      });
     });
 
   });

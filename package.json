@@ -26,6 +26,7 @@
     "async": "^1.5.0",
     "moment": "^2.10.6",
     "mysql": "^2.10.0",
+    "node-schedule": "^0.6.0",
     "sha1": "^1.1.1",
     "underscore": "^1.8.3"
   }

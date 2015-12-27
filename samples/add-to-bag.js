@@ -8,5 +8,7 @@ const bag = new PersistentBag({
 });
 
 bag.add({ test: false }, function (err, dataId) {
-  console.log(dataId);
+  console.log('Entry id: ' + dataId);
+
+  process.exit();
 });
