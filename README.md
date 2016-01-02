@@ -94,5 +94,9 @@ If you want to contribute, please do. Some suggestions:
 
 1. Enable different types of `bag`: Just like [kue][21] has different type of jobs, we want different type of `bag`s.
 2. Make time interval dynamic: Currently, a new `bag` is created and emitted every `15 minutes`. It would be useful to make this dynamic somehow, while stilling enabling persistence.
+3. Allow for different engines for persistence, e.g. [Like.js][22], [NeDB][23], or [AlaSQL][24]
 
 [21]: https://github.com/Automattic/kue#creating-jobs
+[22]: http://lokijs.org/
+[23]: https://github.com/louischatriot/nedb
+[24]: https://github.com/agershun/alasql
